@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>路由器参数查询</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="topbar-main">
+        <h1>路由器参数查询</h1>
+        <p class="sub">规格 · 尺寸 · 详细参数 — 共 12 款磊科(Netcore)路由器</p>
+      </div>
+      <div class="topbar-brand">
+        <div class="brand-name">磊科 Netcore</div>
+        <div class="brand-slogan">专注网络接入 · 企业级稳定 · 全场景覆盖</div>
+        <div class="brand-badges">
+          <span>WiFi 6 / 7 Ready</span>
+          <span>全千兆方案</span>
+          <span>智能组网</span>
+          <span>多拨负载</span>
+        </div>
+        <button id="themeToggle" class="theme-toggle" type="button" aria-label="切换深色 / 浅色模式">
+          <span class="theme-label">深色</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="layout">
+      <div class="left">
+        <section class="controls">
+          <input id="search" type="search" placeholder="搜索品牌 / 型号 / 关键字…" autocomplete="off" />
+          <select id="filterBrand"><option value="">全部品牌</option></select>
+          <select id="filterWifi"><option value="">全部 WiFi 标准</option></select>
+          <span id="count" class="count"></span>
+        </section>
+
+        <section id="cards" class="cards"></section>
+        <p id="empty" class="empty" hidden>没有匹配的路由器，试试其它关键字。</p>
+      </div>
+
+      <aside class="right">
+        <div class="panel">
+          <h2 class="panel-title">问题搜索</h2>
+          <p class="panel-sub">跨全部 12 款磊科路由器的常见问题 · 支持多关键词模糊匹配</p>
+          <input id="globalFaqSearch" class="faq-search" type="search" placeholder="搜索问题，如 双网 密码 掉线 后台…" autocomplete="off" />
+          <div id="globalFaqCount" class="faq-count"></div>
+          <div id="globalFaqList" class="faq-list"></div>
+          <div class="panel-footer">
+            <div class="footer-stat">收录 12 款磊科路由器 · 49 条常见问题</div>
+            <div class="footer-addr">公网访问：netcore-router-db-skevog6n.edgeone.cool</div>
+            <div class="footer-tip">找不到答案？点击左侧机型卡片查看专属 FAQ</div>
+            <div class="share-box">
+              <img class="qr" src="images/qr-public.png" alt="扫码访问本站" />
+              <div class="share-text">
+                <div class="share-title">扫码用手机访问</div>
+                <button id="copyLink" class="copy-btn" type="button">复制访问链接</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <div id="modal" class="modal" hidden>
+    <div class="modal-box">
+      <button id="modalClose" class="modal-close" aria-label="关闭">×</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
